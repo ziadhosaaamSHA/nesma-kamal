@@ -1,282 +1,311 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
-/* =========================================
-   THEME TOKENS (Tailwind v4)
-========================================= */
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
 
-@theme {
-  /* Brand Colors */
+@theme inline {
+
+  /* ==========================================================
+     COLOR — PRIMARY / MOSS
+     ========================================================== */
+
+  --color-moss-50: #e8ebe5;
+  --color-moss-100: #cdd3c7;
+  --color-moss-200: #a5b09b;
+  --color-moss-300: #7d8d6f;
+  --color-moss-400: #5f6f52;
+  --color-moss-500: #4a5a3e;
+  --color-moss-600: #3d4d33;
+  --color-moss-700: #2f3a25;
+  --color-moss-800: #1f2618;
+  --color-moss-900: #11150e;
+  --color-moss-950: #080a06;
+
+
+  /* ==========================================================
+     COLOR — SECONDARY / BURGUNDY (DYNAMIC COLOR-MIX SHADES)
+     ========================================================== */
+
+  --color-burgundy: #962125;
+  --color-burgundy-50: color-mix(in srgb, var(--color-burgundy) 5%, #fff);
+  --color-burgundy-100: color-mix(in srgb, var(--color-burgundy) 15%, #fff);
+  --color-burgundy-200: color-mix(in srgb, var(--color-burgundy) 30%, #fff);
+  --color-burgundy-300: color-mix(in srgb, var(--color-burgundy) 50%, #fff);
+  --color-burgundy-400: color-mix(in srgb, var(--color-burgundy) 70%, #fff);
+  --color-burgundy-500: color-mix(in srgb, var(--color-burgundy) 90%, #fff);
+  --color-burgundy-600: color-mix(in srgb, var(--color-burgundy) 80%, #000);
+  --color-burgundy-700: color-mix(in srgb, var(--color-burgundy) 60%, #000);
+  --color-burgundy-800: color-mix(in srgb, var(--color-burgundy) 40%, #000);
+  --color-burgundy-900: color-mix(in srgb, var(--color-burgundy) 20%, #000);
+  --color-burgundy-950: color-mix(in srgb, var(--color-burgundy) 10%, #000);
+
+
+  /* ==========================================================
+     COLOR — TERTIARY / NAVY
+     ========================================================== */
+
+  --color-navy-50: #e9edf2;
+  --color-navy-100: #c8d2de;
+  --color-navy-200: #a2b3c6;
+  --color-navy-300: #7891aa;
+  --color-navy-400: #55708c;
+  --color-navy-500: #3d5772;
+  --color-navy-600: #2d4459;
+  --color-navy-700: #223447;
+  --color-navy-800: #182634;
+  --color-navy-900: #101a24;
+  --color-navy-950: #080d12;
+
+
+  /* ==========================================================
+     COLOR — NEUTRALS & ACCENTS
+     ========================================================== */
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-gray-50: #f7f7f7;
+  --color-gray-100: #e8e8e8;
+  --color-gray-200: #d1d1d1;
+  --color-gray-300: #b0b0b0;
+  --color-gray-400: #888888;
+  --color-gray-500: #6a6a6a;
+  --color-gray-600: #4a4a4a;
+  --color-gray-700: #333333;
+  --color-gray-800: #1f1f1f;
+  --color-gray-900: #121212;
+  --color-gray-950: #0a0a0a;
+
+  --color-cream: #f4efe8;
+  --color-cream-muted: rgba(244, 239, 232, 0.7);
+  --color-cream-subtle: rgba(244, 239, 232, 0.4);
+  --color-lime-soft: #f8ffe9;
+
+
+  /* ==========================================================
+     SEMANTIC BRAND TOKENS
+     ========================================================== */
+
+  --color-primary: var(--color-moss-400);
+  --color-primary-hover: var(--color-moss-500);
+  --color-primary-active: var(--color-moss-600);
+
+  --color-secondary: var(--color-burgundy-600);
+  --color-secondary-hover: var(--color-burgundy-500);
+  --color-secondary-active: var(--color-burgundy-700);
+
+  --color-tertiary: var(--color-navy-600);
+  --color-tertiary-hover: var(--color-navy-500);
+  --color-tertiary-active: var(--color-navy-700);
+
+  --color-background: var(--color-cream);
+  --color-background-muted: var(--color-cream-muted);
+  --color-background-subtle: var(--color-cream-subtle);
+
+  --color-foreground: var(--color-gray-700);
+  --color-foreground-muted: var(--color-gray-500);
+  --color-foreground-subtle: var(--color-gray-400);
+
+  --color-surface: var(--color-white);
+  --color-surface-muted: var(--color-gray-50);
+
+  --color-border: var(--color-gray-100);
+  --color-border-muted: var(--color-gray-200);
+
+  --color-destructive: var(--color-burgundy-600);
+
+
+  /* ==========================================================
+     LEGACY BRAND PALETTE
+     ========================================================== */
+
   --color-brand-sage: #e5e0d0;
   --color-brand-olive: #6b705c;
   --color-brand-burgundy: #6a0d2f;
   --color-brand-charcoal: #333333;
   --color-brand-parchment: #f4f1ea;
+  --color-brand-heading: #333333;
+  --color-brand-heading-2: var(--color-brand-sage/50);
 
-  --color-brand-primary: #254633;
-  --color-brand-secondary: #f4e7db;
 
-  /* Fonts */
-  --font-display: var(--font-sf-pro), sans-serif;
-  --font-sfpro: var(--font-sf-pro), sans-serif;
+  --color-brand-primary: var(--color-moss-400);
+  --color-brand-secondary: var(--color-burgundy-600);
+
+
+  /* ==========================================================
+     FONTS
+     ========================================================== */
+
   --font-sans: var(--font-montserrat), sans-serif;
+  --font-display: var(--font-sf-pro), sans-serif;
   --font-arabic: var(--font-ibm-plex-arabic), sans-serif;
+  --font-zain: var(--font-zain), sans-serif;
 
-  /* Background Images */
-  --background-image-gradient-radial:
-    radial-gradient(var(--tw-gradient-stops));
 
-  --background-image-gradient-conic:
-    conic-gradient(
-      from 180deg at 50% 50%,
-      var(--tw-gradient-stops)
-    );
+  /* ==========================================================
+     RESPONSIVE FLUID SPACING
+     ========================================================== */
+
+  /* Page horizontal gutter
+     ~16px mobile → ~64px desktop */
+  --spacing-page-x: clamp(1rem, 4vw, 4rem);
+
+  /* Section vertical spacing
+     ~48px mobile → ~96px desktop */
+  --spacing-section-y: clamp(3rem, 6vw, 6rem);
+  --spacing-section-y-sm: clamp(2rem, 4vw, 4rem);
+  --spacing-section-y-lg: clamp(4rem, 8vw, 8rem);
+
+  /* Section spacing */
+  --spacing-section-vertical: 0.25rem;
+  --spacing-section-horizontal: 4rem;
+
+
+  /* ==========================================================
+     BORDER RADIUS
+     ========================================================== */
+
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+
+  --radius-button: var(--radius-md);
+  --radius-input: var(--radius-md);
+  --radius-card: var(--radius-lg);
+  --radius-modal: var(--radius-xl);
+  --radius-pill: var(--radius-full);
+
+
+  /* ==========================================================
+     SHADOWS (CONSOLIDATED BRAND ELEVATION)
+     ========================================================== */
+
+  --shadow-xs: 0 0.0625rem 0.125rem rgba(17, 21, 14, 0.05);
+  --shadow-sm: 0 0.0625rem 0.125rem rgba(17, 21, 14, 0.06), 0 0.125rem 0.375rem rgba(17, 21, 14, 0.04);
+  --shadow-md: 0 0.125rem 0.25rem rgba(17, 21, 14, 0.06), 0 0.375rem 1rem rgba(17, 21, 14, 0.06);
+  --shadow-lg: 0 0.25rem 0.5rem rgba(17, 21, 14, 0.06), 0 0.75rem 1.5rem rgba(17, 21, 14, 0.08);
+  --shadow-xl: 0 0.5rem 1rem rgba(17, 21, 14, 0.08), 0 1.25rem 2.5rem rgba(17, 21, 14, 0.10);
+  --shadow-2xl: 0 0.75rem 1.5rem rgba(17, 21, 14, 0.08), 0 2rem 4rem rgba(17, 21, 14, 0.14);
+  --shadow-floating: 0 0.25rem 0.5rem rgba(17, 21, 14, 0.06), 0 1rem 2rem rgba(17, 21, 14, 0.10);
+  --shadow-nav: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05), 0 0.75rem 1.5rem rgba(0, 0, 0, 0.07);
+  --shadow-card: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.04), 0 0.5rem 1.25rem rgba(0, 0, 0, 0.06);
+  --shadow-dropdown: 0 0.5rem 1rem rgba(0, 0, 0, 0.06), 0 1.25rem 2.5rem rgba(0, 0, 0, 0.10);
+  --shadow-modal: 0 1rem 2rem rgba(0, 0, 0, 0.10), 0 2rem 4rem rgba(0, 0, 0, 0.14);
 }
 
-/* =========================================
-   TAILWIND LAYERS
-========================================= */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* =========================================
-   ROOT VARIABLES
-========================================= */
+/* ============================================================
+   ROOT & BASE
+   ============================================================ */
 
 :root {
-  --foreground-rgb: 51, 51, 51;
-  --background-start-rgb: 229, 224, 208;
-  --background-end-rgb: 229, 224, 208;
-}
+  font-size: 16px;
+  color: var(--color-foreground);
+  background: var(--color-moss-400);
 
-/* =========================================
-   BASE STYLES
-========================================= */
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
-  font-family: var(--font-montserrat), sans-serif;
-
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  overflow-x: hidden;
 }
 
-/* =========================================
-   TYPOGRAPHY
-========================================= */
+@layer base {
+  html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-sf-pro), sans-serif !important;
-  font-weight: 700 !important;
-  font-style: italic !important;
-}
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--color-moss-700);
+    color: var(--color-foreground);
+  }
 
-/* =========================================
-   RTL SUPPORT
-========================================= */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-[dir="rtl"] {
-  font-family: var(--font-ibm-plex-arabic), sans-serif;
-}
+  img,
+  svg,
+  video,
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
 
-/* =========================================
-   UTILITIES
-========================================= */
+  img {
+    height: auto;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-moss-200);
+    color: var(--color-moss-900);
   }
 }
 
-/* =========================================
-   LOGO SPACING
-========================================= */
 
-.logo-spacing {
-  font-family: var(--font-sf-pro), sans-serif !important;
-  font-style: normal !important;
-  letter-spacing: 0.15em !important;
+/* ============================================================
+   RESPONSIVE UTILITIES
+   ============================================================ */
+
+@utility page-x {
+  padding-inline: var(--spacing-page-x);
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 1.25rem 2.5rem;
-
-  background-color: var(--color-brand-primary);
-  color: var(--color-brand-parchment);
-
-  border: none;
-  border-radius: 4px;
-
-  font-size: 10px;
-  font-weight: 500;
-
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-
-  cursor: pointer;
-
-  width: auto;
-
-  transition:
-    all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-
-  box-shadow:
-    0 10px 30px -10px rgba(37, 70, 51, 0.4);
+@utility section-y {
+  padding-block: var(--spacing-section-y);
 }
 
-.btn-primary:hover {
-  background-color: var(--color-brand-burgundy);
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 20px 40px -15px rgba(37, 70, 51, 0.5);
+@utility section-y-sm {
+  padding-block: var(--spacing-section-y-sm);
 }
 
-.btn-primary:active {
-  transform: translateY(0);
-  scale: 0.98;
+@utility section-y-lg {
+  padding-block: var(--spacing-section-y-lg);
 }
 
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 1.25rem 2.5rem;
-
-  background-color: transparent;
-  color: var(--color-brand-parchment);
-
-  border: 1px solid rgba(250, 245, 238, 0.4);
-  border-radius: 4px;
-
-  font-size: 10px;
-  font-weight: 500;
-
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-
-  backdrop-filter: blur(4px);
-
-  cursor: pointer;
-
-  width: auto;
-
-  transition:
-    all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+@utility margin-section-x {
+  margin-block: var(--spacing-section-horizontal);
 }
 
-.btn-secondary:hover {
-  background-color: var(--color-brand-burgundy);
-  border-color: var(--color-brand-burgundy);
-
-  transform: translateY(-2px);
+@utility margin-section-y {
+  margin-inline: var(--spacing-section-vertical);
 }
 
-.secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 1.25rem 2.5rem;
-
-  background-color: var(--color-brand-burgundy);
-  color: var(--color-brand-parchment);
-
-  border-radius: 4px;
-
-  font-size: 10px;
-  font-weight: 500;
-
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-
-  transition: all 0.5s ease;
+@utility container-brand {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: var(--spacing-page-x);
 }
 
-.secondary-btn:hover {
-  background-color: black;
-
-  box-shadow:
-    20px 20px 60px rgba(0, 0, 0, 0.3);
+.heading-arabic {
+  font-family: var(--font-zain);
+  line-height: 4.5rem;
 }
 
-/* =========================================
-   OPTIONAL CUSTOM UTILITIES
-========================================= */
-
-.border-brand-charcoal\/10 {
-  border-color: rgb(51 51 51 / 0.1);
-}
-
-.border-brand-charcoal\/5 {
-  border-color: rgb(51 51 51 / 0.05);
-}
-
-.border-brand-olive\/20 {
-  border-color: rgb(107 112 92 / 0.2);
-}
-
-.border-brand-parchment\/10 {
-  border-color: rgb(244 241 234 / 0.1);
-}
-
-.border-brand-parchment\/20 {
-  border-color: rgb(244 241 234 / 0.2);
-}
-
-.border-brand-parchment\/40 {
-  border-color: rgb(244 241 234 / 0.4);
-}
-
-.bg-brand-primary\/10 {
-  background-color: rgb(37 70 51 / 0.1);
-}
-
-.bg-brand-secondary\/10 {
-  background-color: rgb(244 231 219 / 0.1);
-}
-
-.bg-brand-burgundy\/10 {
-  background-color: rgb(106 13 47 / 0.1);
-}
-
-.bg-brand-charcoal\/40 {
-  background-color: rgb(51 51 51 / 0.4);
-}
-
-.bg-brand-olive\/5 {
-  background-color: rgb(107 112 92 / 0.05);
-}
-
-.bg-brand-olive\/60 {
-  background-color: rgb(107 112 92 / 0.6);
-}
-
-.bg-brand-sage\/20 {
-  background-color: rgb(229 224 208 / 0.2);
+.body-arabic {
+  font-family: var(--font-zain);
+  line-height: 2.5rem;
 }

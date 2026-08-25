@@ -1,14 +1,5 @@
-"use client";
+import TestimonialsPageContent from "./components/TestimonialsPageContent";
 
-import React from "react";
-import Testimonials from "@/components/Testimonials";
-
-const TestimonialsPage = () => {
-  return (
-    <div className="relative">
-      <Testimonials />
-    </div>
-  );
-};
-
-export default TestimonialsPage;
+export default function TestimonialsPage() {
+  return <TestimonialsPageContent />;
+}

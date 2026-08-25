@@ -6,7 +6,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { PageTransitionProvider } from "@/context/PageTransitionContext";
-import PageLoader from "@/components/PageLoader";
+import PageLoader from "@/components/transitions/PageLoader";
 
 const winsel = localFont({
   src: [
@@ -52,6 +52,47 @@ const sfPro = localFont({
   variable: "--font-sf-pro",
   display: "swap",
 });
+const Zain = localFont({
+  src: [
+    {
+      path: "./fonts/Zain/Zain-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zain/Zain-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zain/Zain-black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zain/Zain-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zain/Zain-ExtraLight.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zain/Zain-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zain/Zain-italic.ttf",
+      weight: "200",
+      style: "italic",
+    },
+  ],
+  variable: "--font-zain",
+  display: "swap",
+});
 
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
@@ -83,10 +124,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          montserrat.variable,
           winsel.variable,
           sfPro.variable,
-          ibmPlexArabic.variable,
+          Zain.variable,
           "font-sans antialiased bg-brand-sage text-brand-charcoal"
         )}
       >
