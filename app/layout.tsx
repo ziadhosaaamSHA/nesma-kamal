@@ -65,7 +65,7 @@ const Zain = localFont({
       style: "normal",
     },
     {
-      path: "./fonts/Zain/Zain-black.ttf",
+      path: "./fonts/Zain/Zain-Black.ttf",
       weight: "900",
       style: "normal",
     },
@@ -85,7 +85,7 @@ const Zain = localFont({
       style: "normal",
     },
     {
-      path: "./fonts/Zain/Zain-italic.ttf",
+      path: "./fonts/Zain/Zain-Italic.ttf",
       weight: "200",
       style: "italic",
     },
