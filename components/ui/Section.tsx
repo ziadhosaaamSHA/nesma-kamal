@@ -28,7 +28,7 @@ export default function Section({
     <section
       id={id}
       className={cn(
-        "relative w-full overflow-hidden rounded-lg page-x section-y margin-section-x margin-section-y",
+        "relative overflow-hidden rounded-lg page-x section-y margin-section-x margin-section-y",
         bgClass,
         className
       )}
